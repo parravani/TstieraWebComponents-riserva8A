@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Components - Tastiera Alfabetica</title>
+
+    <!-- Carica lo stile globale che contiene i font -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/game2.css">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+    <link rel="stylesheet" href="styles/imagePreview.css" />
+</head>
+<body>
+    <div class="pulsantiera">
+        <div class="top"></div>
+        <div id="wordyToggleButton" class="control-image-button disabled-effect clickMe"><div class="action-area"></div></div>
+        <!-- Pulsante dedicato alla modalità simboli -->
+        <div id="simboToggleButton" class="control-image-button disabled-effect clickMe"><div class="action-area"></div></div>
+        <!-- Nuovo pulsante dedicato alla modalità foto -->
+        <div id="photoToggleButton" class="control-image-button clickMe"><div class="action-area"></div></div>
+    </div>
+    <div class="lavoro">
+        <div class="top"></div>
+        <div class="lavagna">
+            <div style="height: 15%; width: 98%; margin: 0% 1%;">
+                <alphabet-keyboard data-src="data/letters.json" data-phoneme="data/phonemes-new.json"></alphabet-keyboard>
+            </div>
+            <div style="height: 7vh; margin: 10px"></div>
+            <div style="height: 12vh;margin: 10px;display: flex;flex-direction: column;align-items: center;">
+                <!-- PERSONAGGI MAESTRI -->
+                <img id="typy-maestro" class="maestro-char" src="img/typy-maestro.png" alt="Typy">
+                <img id="looky-maestro" class="maestro-char" src="img/looky-maestro.png" alt="Looky">
+                <game-stage id="word-display-stage">
+                    <word-display></word-display>
+                    <word-display-flying id="word-display-animated"></word-display-flying>
+                </game-stage>
+            </div>
+
+            <div id="animation-container"></div>
+            <div class="tooltip" id="wordCharTooltip"></div>
+            <div class="img-preview" id="global-image-preview"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="preview" /></div>
+
+        </div>
+        <div class="coppie"></div>
+        <div class="sotto">
+            <div class="lavagnaIpaContainer">
+                <div class="lavagnaIpa"></div>
+                <div class="top"></div>
+                <div class="top"></div>
+                <div class="IpaContainer">
+                    <alphabet-keyboard data-src="data/phonemes-new.json"></alphabet-keyboard>
+                </div>
+                <div id="game-container" style="margin-top: 20px; text-align: center;"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="manager/data/dataservice.js"></script>
+    <!-- 1. Carica prima i componenti base -->
+    <script type="module" src="components/letter-key/letter-key.js"></script>
+    <script type="module" src="components/alphabet-keyboard/alphabet-keyboard.js"></script>
+    <script type="module" src="components/game-stage/game-stage.js"></script>
+    <script type="module" src="components/word-display/word-display.js"></script>
+    <script type="module" src="components/word-display/word-display-animated.js"></script>
+
+    <!--orchestratore-->
+    <!-- 2. Carica dopo i manager che li utilizzano -->
+    <!-- 2. Carica i manager e l'orchestratore -->
+    <script type="module" src="manager/imagePreview/imagePreviewDispatcher.js"></script>
+    <script type="module" src="manager/soundDispatcher/soundDispatcher.js"></script>
+    <!--<script src="manager/game/game1Manager.js"></script>-->
+    <script type="module" src="manager/game/game2Manager.js"></script>
+
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', () => {
+            const photoBtn = document.getElementById('photoToggleButton');
+            const wordyBtn = document.getElementById('wordyToggleButton');
+            const simboBtn = document.getElementById('simboToggleButton');
+
+            // Funzione per gestire lo stato attivo/disattivo
+            function activateButton(buttonToActivate) {
+                [wordyBtn, simboBtn, photoBtn].forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.classList.add('disabled-effect');
+                });
+                buttonToActivate.classList.add('active');
+                buttonToActivate.classList.remove('disabled-effect');
+            }
+
+            // Imposta Wordy come attivo di default
+            activateButton(wordyBtn);
+
+            photoBtn.addEventListener('click', () => {
+                window.location.href = 'games/photo-game.html';
+            });
+
+            wordyBtn.addEventListener('click', () => {
+                activateButton(wordyBtn);
+                // La logica di Wordy è già attiva in questa pagina
+                console.log('Modalità Wordy già attiva.');
+            });
+
+            simboBtn.addEventListener('click', () => {
+                activateButton(simboBtn);
+                // Qui andrebbe la logica per attivare la modalità Simbo
+                console.log('Modalità Simbo attivata.');
+            });
+        });
+    </script>
+</body>
+</html>
