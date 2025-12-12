@@ -1,0 +1,444 @@
+{
+  "layout": [
+    {
+      "row": 1,
+      "keys": [
+        {
+          "ch": "A",
+          "ipa": "eɪ",
+          "img": "img/imalettere/apecopia.png",
+          "sound": "Audio/Tastiere/eɪ.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/APE.wav",
+          "word": "APE",
+          "wordPhonetic": "eɪp",
+          "wordCharPhonetics": [ "eɪ", "p", "" ],
+          "translation": "Scimmia Antropomorfa",
+          "style": {
+            "color": "#FF8C00",
+            "borderColor": "#FF8C00",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "B",
+          "ipa": "biː",
+          "img": "img/imalettere/bcopia.png",
+          "sound": "Audio/Tastiere/LB.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/BEE.wav",
+          "word": "BEE",
+          "wordPhonetic": "biː",
+          "wordCharPhonetics": [ "b", "iː", "" ],
+          "translation": "Ape",
+          "style": {
+            "color": "#FFFFFF",
+            "borderColor": "#FFFFFF",
+            "textShadow": "1px 1px 0 #00FF66",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "C",
+          "ipa": "siː",
+          "img": "img/imalettere/ccopia.png",
+          "sound": "Audio/Tastiere/LC.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/CEILING.wav",
+          "word": "CEILING",
+          "wordPhonetic": "siːlɪŋ",
+          "wordCharPhonetics": [ "s", "iː","", "l", "ɪ", "ŋ", "", "" ],
+          "translation": "Soffitto",
+          "style": {
+            "color": "#FFFF00",
+            "borderColor": "#FFFF00",
+            "textShadow": "1px 1px 0 #00FF66",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "D",
+          "ipa": "diː",
+          "img": "img/imalettere/dcopia.png",
+          "sound": "Audio/Tastiere/LD.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/deep.wav",
+          "word": "DEEP",
+          "wordPhonetic": "diːp",
+          "wordCharPhonetics": [ "d", "iː", "", "p" ],
+          "translation": "Profondo",
+          "style": {
+            "color": "#FFFFFF",
+            "borderColor": "#FFFFFF",
+            "textShadow": "1px 1px 0 #00FF66",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "E",
+          "ipa": "iː",
+          "img": "img/imalettere/ecopia.png",
+          "sound": "Audio/Tastiere/LE.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/EAGLE.wav",
+          "word": "EAGLE",
+          "wordPhonetic": "iːɡl",
+          "wordCharPhonetics": [ "iː", "", "g", "l", "" ],
+          "translation": "Aquila",
+          "style": {
+            "color": "#00FF66",
+            "borderColor": "#00FF66",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "F",
+          "ipa": "ef",
+          "img": "img/imalettere/fcopia.png",
+          "sound": "Audio/Tastiere/LF.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/F.wav",
+          "word": "EFF",
+          "wordPhonetic": "ef",
+          "wordCharPhonetics": [ "e", "f", "f" ],
+          "translation": "Lettera F",
+          "style": {
+            "color": "#87CEFA",
+            "borderColor": "#87CEFA",
+            "textShadow": "1px 1px 0 #FFFFFF",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "G",
+          "ipa": "dʒiː",
+          "img": "img/imalettere/gcopia.png",
+          "sound": "Audio/Tastiere/LG.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/GEE.wav",
+          "word": "GEE",
+          "wordPhonetic": "dʒiː",
+          "wordCharPhonetics": [ "dʒ", "iː", "" ],
+          "translation": "Lettera G",
+          "style": {
+            "color": "#FF0000",
+            "borderColor": "#FF0000",
+            "textShadow": "1px 1px 0 #00FF66",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "H",
+          "ipa": "eɪtʃ",
+          "img": "img/imalettere/hcopia.png",
+          "sound": "Audio/Tastiere/LH.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/H.wav",
+          "word": "AITCH",
+          "wordPhonetic": "eɪtʃ",
+          "wordCharPhonetics": [ "eɪ", "", "", "tʃ", "" ],
+          "translation": "Lettera H",
+          "style": {
+            "color": "#FF8C00",
+            "borderColor": "#FF8C00",
+            "textShadow": "1px 1px 0 #FF0000",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "I",
+          "ipa": "aɪ",
+          "img": "img/imalettere/icopia.png",
+          "sound": "Audio/Tastiere/LI.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/ICE.wav",
+          "word": "ICE",
+          "wordPhonetic": "aɪs",
+          "wordCharPhonetics": [ "aɪ", "s", "" ],
+          "translation": "Ghiaccio",
+          "style": {
+            "color": "#00BFFF",
+            "borderColor": "#00BFFF",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "J",
+          "ipa": "dʒeɪ",
+          "img": "img/imalettere/jcopia.png",
+          "sound": "Audio/Tastiere/LJ.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/JAIL.wav",
+          "word": "JAIL",
+          "wordPhonetic": "dʒeɪl",
+          "wordCharPhonetics": [ "dʒ", "eɪ", "", "l" ],
+          "translation": "Prigione",
+          "style": {
+            "color": "#FF0000",
+            "borderColor": "#FF0000",
+            "textShadow": "1px 1px 0 #FF8C00",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "K",
+          "ipa": "keɪ",
+          "img": "img/imalettere/kcopia.png",
+          "sound": "Audio/Tastiere/LK.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/KAIL.wav",
+          "word": "KAIL",
+          "wordPhonetic": "keɪl",
+          "wordCharPhonetics": [ "k", "eɪ", "", "l" ],
+          "translation": "Cavolo",
+          "style": {
+            "color": "#FFFF00",
+            "borderColor": "#FFFF00",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "L",
+          "ipa": "el",
+          "img": "img/imalettere/lcopia.png",
+          "sound": "Audio/Tastiere/LL.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/L.wav",
+          "word": "EL",
+          "wordPhonetic": "el",
+          "wordCharPhonetics": [ "e", "l" ],
+          "translation": "Lettera L",
+          "style": {
+            "color": "#87CEFA",
+            "borderColor": "#87CEFA",
+            "textShadow": "1px 1px 0 #FFFFFF",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "M",
+          "ipa": "em",
+          "img": "img/imalettere/mcopia.png",
+          "sound": "Audio/Tastiere/LM.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/M.wav",
+          "word": "EM",
+          "wordPhonetic": "em",
+          "wordCharPhonetics": [ "e", "m" ],
+          "translation": "Lettera M",
+          "style": {
+            "color": "#87CEFA",
+            "borderColor": "#87CEFA",
+            "textShadow": "1px 1px 0 #FFFFFF",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "N",
+          "ipa": "en",
+          "img": "img/imalettere/ncopia.png",
+          "sound": "Audio/Tastiere/LN.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/N.wav",
+          "word": "EN",
+          "wordPhonetic": "en",
+          "wordCharPhonetics": [ "e", "n" ],
+          "translation": "Lettera N",
+          "style": {
+            "color": "#87CEFA",
+            "borderColor": "#87CEFA",
+            "textShadow": "1px 1px 0 #FFFFFF",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "O",
+          "ipa": "əʊ",
+          "img": "img/imalettere/ocopia.png",
+          "sound": "Audio/Tastiere/LO.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/O.wav",
+          "word": "OAK",
+          "wordPhonetic": "əʊk",
+          "wordCharPhonetics": [ "əʊ", "", "k" ],
+          "translation": "Quercia",
+          "style": {
+            "color": "#cf39cf",
+            "borderColor": "#cf39cf",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "P",
+          "ipa": "piː",
+          "img": "img/imalettere/pcopia.png",
+          "sound": "Audio/Tastiere/LP.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/peach.wav",
+          "word": "PEACH",
+          "wordPhonetic": "piːtʃ",
+          "wordCharPhonetics": [ "p", "iː", "", "tʃ", "" ],
+          "translation": "Pesca",
+          "style": {
+            "color": "#FFFF00",
+            "borderColor": "#FFFF00",
+            "textShadow": "1px 1px 0 #00FF66",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "Q",
+          "ipa": "kjuː",
+          "img": "img/imalettere/qcopia.png",
+          "sound": "Audio/Tastiere/LQ.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/queue.wav",
+          "word": "QUEUE",
+          "wordPhonetic": "kjuː",
+          "wordCharPhonetics": [ "k", "juː", "", "", "" ],
+          "translation": "Coda / Fila",
+          "style": {
+            "color": "#FFFF00",
+            "borderColor": "#FFFF00",
+            "textShadow": "1px 1px 0 #00FF66",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "R",
+          "ipa": "ɑː",
+          "img": "img/imalettere/rcopia.png",
+          "sound": "Audio/Tastiere/LR.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/R.wav",
+          "word": "ARE",
+          "wordPhonetic": "ɑː",
+          "wordCharPhonetics": [ "ɑː", "", "" ],
+          "translation": "Lettera R",
+          "style": {
+            "color": "#00FF66",
+            "borderColor": "#00FF66",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "S",
+          "ipa": "es",
+          "img": "img/imalettere/scopia.png",
+          "sound": "Audio/Tastiere/LS.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/S.wav",
+          "word": "ESS",
+          "wordPhonetic": "es",
+          "wordCharPhonetics": [ "e", "s", "" ],
+          "translation": "Lettera S",
+          "style": {
+            "color": "#87CEFA",
+            "borderColor": "#87CEFA",
+            "textShadow": "1px 1px 0 #FFFFFF",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "T",
+          "ipa": "tiː",
+          "img": "img/imalettere/tcopia.png",
+          "sound": "Audio/Tastiere/LT.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/TEA.wav",
+          "word": "TEA",
+          "wordPhonetic": "tiː",
+          "wordCharPhonetics": [ "t", "iː", "" ],
+          "translation": "Tè",
+          "style": {
+            "color": "#FFFF00",
+            "borderColor": "#FFFF00",
+            "textShadow": "1px 1px 0 #00FF66",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "U",
+          "ipa": "juː",
+          "img": "img/imalettere/ucopia.png",
+          "sound": "Audio/Tastiere/LU.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/UFO.wav",
+          "word": "UFO",
+          "wordPhonetic": "juːefəʊ",
+          "wordCharPhonetics": [ "juː", "f", "əʊ" ],
+          "translation": "UFO",
+          "style": {
+            "color": "#c29098",
+            "borderColor": "#c29098",
+            "textShadow": "1px 1px 0 #00FF66",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "V",
+          "ipa": "viː",
+          "img": "img/imalettere/vcopia.png",
+          "sound": "Audio/Tastiere/LV.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/VEAL.wav",
+          "word": "VEAL",
+          "wordPhonetic": "viːl",
+          "wordCharPhonetics": [ "v", "iː", "", "l" ],
+          "translation": "Vitello",
+          "style": {
+            "color": "#FFFFFF",
+            "borderColor": "#FFFFFF",
+            "textShadow": "1px 1px 0 #00FF66",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "W",
+          "ipa": "dʌbəl.juː",
+          "img": "img/imalettere/wcopia.png",
+          "sound": "Audio/Tastiere/LW.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/W.wav",
+          "word": "DOUBLE U",
+          "wordPhonetic": "dʌbl juː",
+          "wordCharPhonetics": [ "d", "ʌ", "", "b", "l", "", " ", "juː" ],
+          "translation": "Lettera W",
+          "style": {
+            "color": "#c29098",
+            "borderColor": "#FFC0CB",
+            "textShadow": "1px 1px 0 #00FF66",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "X",
+          "ipa": "eks",
+          "img": "img/imalettere/xcopia.png",
+          "sound": "Audio/Tastiere/LX.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/exit.wav",
+          "word": "EXIT",
+          "wordPhonetic": "eksɪt",
+          "wordCharPhonetics": [ "e", "ks", "ɪ", "t" ],
+          "translation": "Uscita",
+          "style": {
+            "color": "#87CEFA",
+            "borderColor": "#87CEFA",
+            "textShadow": "1px 1px 0 #00FF66",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "Y",
+          "ipa": "waɪ",
+          "img": "img/imalettere/ycopia.png",
+          "sound": "Audio/Tastiere/LY.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/Y.wav",
+          "word": "WHY",
+          "wordPhonetic": "waɪ",
+          "wordCharPhonetics": [ "w", "aɪ", "" ],
+          "translation": "Perché",
+          "style": {
+            "color": "#c29098",
+            "borderColor": "#FF69B4",
+            "textShadow": "1px 1px 0 #87CEFA",
+            "fontFamily": "Comic Sans MS"
+          }
+        },
+        {
+          "ch": "Z",
+          "ipa": "zed",
+          "img": "img/imalettere/zcopia.png",
+          "sound": "Audio/Tastiere/LZ.wav",
+          "wordSound": "Audio/LETTEPAROSUONI/ZEBRA.wav",
+          "word": "ZEBRA",
+          "wordPhonetic": "zebrə",
+          "wordCharPhonetics": [ "z", "e", "b", "r", "ə" ],
+          "translation": "Zebra",
+          "style": {
+            "color": "#FFFFFF",
+            "borderColor": "#FFFFFF",
+            "fontFamily": "Comic Sans MS"
+          }
+        }
+      ]
+    }
+  ]
+}

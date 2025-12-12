@@ -1,0 +1,65 @@
+{
+  "layout": [
+    {
+      "row": 1,
+      "keys": [
+        { "symbol": "p", "word": "PIG", "wordPhonetic": "pɪɡ", "img": "imasimboli/pig.png", "sound": "suoni/p.wav", "style": { "color": "#FFFF00", "borderColor": "#FFFF00", "textShadow": "1px 1px 0 #00FF66", "fontFamily": "Times New Roman" } },
+        { "symbol": "b", "word": "BOTTLE", "wordPhonetic": "bɒtl", "img": "imasimboli/bottle.png", "sound": "suoni/b.wav", "style": { "color": "#FFFFFF", "borderColor": "#FFFFFF", "textShadow": "1px 1px 0 #00FF66", "fontFamily": "Times New Roman" } },
+        { "symbol": "t", "word": "TABLE", "wordPhonetic": "teɪbl", "img": "imasimboli/table.png", "sound": "suoni/t.wav", "style": { "color": "#FFFF00", "borderColor": "#FFFF00", "textShadow": "1px 1px 0 #00FF66", "fontFamily": "Times New Roman" } },
+        { "symbol": "d", "word": "DOG", "wordPhonetic": "dɒɡ", "img": "imasimboli/dog.png", "sound": "suoni/d.wav", "style": { "color": "#FFFFFF", "borderColor": "#FFFFFF", "textShadow": "1px 1px 0 #00FF66", "fontFamily": "Times New Roman" } },
+        { "symbol": "tʃ", "word": "CHURCH", "wordPhonetic": "tʃɜːtʃ", "img": "imasimboli/church.png", "sound": "suoni/tʃ.wav", "style": { "color": "#FF0000", "borderColor": "#FF0000", "textShadow": "1px 1px 0 #00FF66", "fontFamily": "Times New Roman" } },
+        { "symbol": "dʒ", "word": "GIRAFFE", "wordPhonetic": "dʒərɑːf", "img": "imasimboli/giraffe.png", "sound": "suoni/dʒ.wav", "style": { "color": "#FF0000", "borderColor": "#FF0000", "textShadow": "1px 1px 0 #FF8C00", "fontFamily": "Times New Roman" } },
+        { "symbol": "iː", "word": "EEL", "wordPhonetic": "i:l", "img": "imasimboli/eel.png", "sound": "suoni/ilunga.wav", "style": { "color": "#00FF66", "borderColor": "#00FF66", "fontFamily": "Times New Roman" } },
+        { "symbol": "ɪ", "word": "INK", "wordPhonetic": "ɪŋk", "img": "imasimboli/ink.png", "sound": "suoni/ɪ.wav", "style": { "color": "#87CEFA", "borderColor": "#87CEFA", "textShadow": "1px 1px 0 #FFFFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "ʊ", "word": "BOOK", "wordPhonetic": "bʊk", "img": "imasimboli/book.png", "sound": "suoni/ʊ.wav", "style": { "color": "#87CEFA", "borderColor": "#87CEFA", "textShadow": "1px 1px 0 #FFFFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "uː", "word": "MOON", "wordPhonetic": "muːn", "img": "imasimboli/moon.png", "sound": "suoni/ulunga.wav", "style": { "color": "#00FF66", "borderColor": "#00FF66", "fontFamily": "Times New Roman" } },
+        { "symbol": "ɪə", "word": "EAR", "wordPhonetic": "ɪə", "img": "imasimboli/ear.png", "sound": "suoni/ɪə.wav", "style": { "color": "#87CEFA", "borderColor": "#87CEFA", "textShadow": "1px 1px 0 #FFFFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "ɔɪ", "word": "OIL", "wordPhonetic": "ɔɪl", "img": "imasimboli/oil.png", "sound": "suoni/ɔɪ.wav", "style": { "color": "#87CEFA", "borderColor": "#87CEFA", "textShadow": "1px 1px 0 #FFFFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "aɪ", "word": "EYE", "wordPhonetic": "aɪ", "img": "imasimboli/eye.png", "sound": "suoni/aɪ.wav", "style": { "color": "#87d0fa", "borderColor": "#87CEFA", "textShadow": "1px 1px 0 #FFFFFF", "fontFamily": "Times New Roman" } }
+      ]
+    },
+    { "row": 2, "keys": [
+        { "symbol": "θ", "word": "THUMB", "wordPhonetic": "θʌm", "img": "imasimboli/thumb.png", "sound": "suoni/θ.wav", "style": { "color": "#FF0000", "borderColor": "#FF0000", "textShadow": "1px 1px 0 #FFFF00", "fontFamily": "Times New Roman" } },
+        { "symbol": "ð", "word": "THERE", "wordPhonetic": "ðeə", "img": "imasimboli/there.png", "sound": "suoni/ð.wav", "style": { "color": "#FF0000", "borderColor": "#FF0000", "textShadow": "1px 1px 0 #FFFFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "k", "word": "KING", "wordPhonetic": "kɪŋ", "img": "imasimboli/king.png", "sound": "suoni/k.wav", "style": { "color": "#FFFF00", "borderColor": "#FFFF00", "fontFamily": "Times New Roman" } },
+        { "symbol": "g", "word": "GLASS", "wordPhonetic": "ɡlɑːs", "img": "imasimboli/glass.png", "sound": "suoni/g.wav", "style": { "color": "#FFFFFF", "borderColor": "#FFFFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "f", "word": "FOOT", "wordPhonetic": "fʊt", "img": "imasimboli/foot.png", "sound": "suoni/f.wav", "style": { "color": "#FFFF00", "borderColor": "#FFFF00", "fontFamily": "Times New Roman" } },
+        { "symbol": "v", "word": "VASE", "wordPhonetic": "vɑːz", "img": "imasimboli/vase.png", "sound": "suoni/v.wav", "style": { "color": "#FFFFFF", "borderColor": "#FFFFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "e", "word": "EGG", "wordPhonetic": "eɡ", "img": "imasimboli/egg.png", "sound": "suoni/e.wav", "style": { "color": "#0f99ef", "borderColor": "#87CEFA", "fontFamily": "Times New Roman" } },
+        { "symbol": "ə", "word": "ALARM", "wordPhonetic": "əlɑːm", "img": "imasimboli/alarm.png", "sound": "suoni/ə.wav", "style": { "color": "#87CEFA", "borderColor": "#87CEFA", "fontFamily": "Times New Roman" } },
+        { "symbol": "ɜː", "word": "EARTH", "wordPhonetic": "ɜːθ", "img": "imasimboli/earth.png", "sound": "suoni/ɜlunga.wav", "style": { "color": "#00FF66", "borderColor": "#00FF66", "fontFamily": "Times New Roman" } },
+        { "symbol": "ɔː", "word": "DOOR", "wordPhonetic": "dɔː", "img": "imasimboli/door.png", "sound": "suoni/ɔlunga.wav", "style": { "color": "#00FF66", "borderColor": "#00FF66", "fontFamily": "Times New Roman" } },
+        { "symbol": "eɪ", "word": "APE", "wordPhonetic": "eɪp", "img": "imasimboli/ape.png", "sound": "suoni/eɪ.wav", "style": { "color": "#FF8C00", "borderColor": "#FF8C00", "fontFamily": "Times New Roman" } },
+        { "symbol": "eə", "word": "AIRPLANE", "wordPhonetic": "ˈeəpleɪn", "img": "imasimboli/airplane.png", "sound": "suoni/eə.wav", "style": { "color": "#FF8C00", "borderColor": "#FF8C00", "fontFamily": "Times New Roman" } },
+        { "symbol": "əʊ", "word": "OBOE", "wordPhonetic": "əʊbəʊ", "img": "imasimboli/oboe.png", "sound": "suoni/əʊ.wav", "style": { "color": "#cf39cf", "borderColor": "#cf39cf", "fontFamily": "Times New Roman" } }
+      ]
+    },
+    { "row": 3, "keys": [
+        { "symbol": "s", "word": "SUN", "wordPhonetic": "sʌn", "img": "imasimboli/sun.png", "sound": "suoni/s.wav", "style": { "color": "#FFFF00", "borderColor": "#FFFF00", "fontFamily": "Times New Roman" } },
+        { "symbol": "z", "word": "ZEBRA", "wordPhonetic": "zebrə", "img": "imasimboli/zebra.png", "sound": "suoni/z.wav", "style": { "color": "#FFFFFF", "borderColor": "#FFFFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "ʃ", "word": "SHOP", "wordPhonetic": "ʃɒp", "img": "imasimboli/shop.png", "sound": "suoni/ʃ.wav", "style": { "color": "#FF0000", "borderColor": "#FF0000", "textShadow": "1px 1px 3px yellow", "fontFamily": "Times New Roman" } },
+        { "symbol": "ʒ", "word": "TELEVISION", "wordPhonetic": "telɪvɪʒn", "img": "imasimboli/television.png", "sound": "suoni/ʒ.wav", "style": { "color": "#FF0000", "borderColor": "#FF0000", "textShadow": "1px 1px 3px white", "fontFamily": "Times New Roman" } },
+        { "symbol": "l", "word": "LION", "wordPhonetic": "laɪən", "img": "imasimboli/lion.png", "sound": "suoni/l.wav", "style": { "color": "#FFFFFF", "borderColor": "#FFFFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "n", "word": "NOSE", "wordPhonetic": "nəʊz", "img": "imasimboli/nose.png", "sound": "suoni/n.wav", "style": { "color": "#FFFFFF", "borderColor": "#FFFFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "æ", "word": "ANT", "wordPhonetic": "ænt", "img": "imasimboli/ant.png", "sound": "suoni/æ.wav", "style": { "color": "#00FF66", "borderColor": "#00FF66", "fontFamily": "Times New Roman" } },
+        { "symbol": "ʌ", "word": "UP", "wordPhonetic": "ʌp", "img": "imasimboli/up.png", "sound": "suoni/ʌ.wav", "style": { "color": "#00BFFF", "borderColor": "#00BFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "aː", "word": "ARK", "wordPhonetic": "ɑːk", "img": "imasimboli/ark.png", "sound": "suoni/alunga.wav", "style": { "color": "#00FF66", "borderColor": "#00FF66", "fontFamily": "Times New Roman" } },
+        { "symbol": "ɒ", "word": "OX", "wordPhonetic": "ɒks", "img": "imasimboli/ox.png", "sound": "suoni/ɒ.wav", "style": { "color": "#00BFFF", "borderColor": "#00BFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "aʊ", "word": "OWL", "wordPhonetic": "aʊl", "img": "imasimboli/owl.png", "sound": "suoni/aʊ.wav", "style": { "color": "#87CEFA", "borderColor": "#87CEFA", "fontFamily": "Times New Roman" } },
+        { "symbol": "ʊə", "word": "TOURIST", "wordPhonetic": "tʊərɪst", "img": "imasimboli/tourist.png", "sound": "suoni/ʊə.wav", "style": { "color": "#FFFF00", "borderColor": "#FFFF00", "fontFamily": "Times New Roman" } }
+      ]
+    },
+    { "row": 4, "keys": [
+        { "symbol": "m", "word": "MUSHROOM", "wordPhonetic": "mʌʃrʊm", "img": "imasimboli/mushroom.png", "sound": "suoni/m.wav", "style": { "color": "#FFFFFF", "borderColor": "#FFFFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "ŋ", "word": "RING", "wordPhonetic": "rɪŋ", "img": "imasimboli/ring.png", "sound": "suoni/ŋ.wav", "style": { "color": "#FF0000", "borderColor": "#FF0000", "textShadow": "1px 1px 0 white", "fontFamily": "Times New Roman" } },
+        { "symbol": "h", "word": "HORSE", "wordPhonetic": "hɔːs", "img": "imasimboli/horse.png", "sound": "suoni/h.wav", "style": { "color": "#FFFF00", "borderColor": "#FFFF00", "fontFamily": "Times New Roman" } },
+        { "symbol": "r", "word": "RED", "wordPhonetic": "red", "img": "imasimboli/red.png", "sound": "suoni/r.wav", "style": { "color": "#FFFFFF", "borderColor": "#FFFFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "w", "word": "WHALE", "wordPhonetic": "weɪl", "img": "imasimboli/whale.png", "sound": "suoni/w.wav", "style": { "color": "#c29098", "borderColor": "#c29098", "textShadow": "1px 1px 0 #00FF66", "fontFamily": "Times New Roman" } },
+        { "symbol": "j", "word": "YELLOW", "wordPhonetic": "jeləʊ", "img": "imasimboli/yellow.png", "sound": "suoni/j.wav", "style": { "color": "#c29098", "borderColor": "#c29098", "textShadow": "1px 1px 0 #00FF66", "fontFamily": "Times New Roman" } },
+        { "symbol": "double", "word": "DOUBLE", "wordPhonetic": "dʌbl", "img": "imasimboli/double.png", "sound": "suoni/double.wav", "style": { "color": "#FFFFFF", "borderColor": "#FFFFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "<span class='aɪ-blue-phon'>aɪ</span><span class='ə-celeste-phon'>ə</span>", "word": "FIRE", "wordPhonetic": "faɪə", "img": "imasimboli/fire.png", "sound": "suoni/aɪə.wav", "style": { "color": "#00BFFF", "borderColor": "#00BFFF", "fontFamily": "Times New Roman" } },
+        { "symbol": "<span class='aʊ-blue-phon'>aʊ</span><span class='ə-celeste-phon'>ə</span>", "word": "TOWER", "wordPhonetic": "taʊə", "img": "imasimboli/tower.png", "sound": "suoni/aʊə.wav", "style": { "color": "#FFFFFF", "borderColor": "#00BFFF", "fontFamily": "Times New Roman" } }
+      ]
+    }
+  ]
+}
