@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Game - Web Component Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .demo-section {
+            margin-bottom: 40px;
+        }
+
+        .info-panel {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-panel h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+        }
+
+        .info-panel p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            flex: 1 1 calc(33.333% - 15px);
+            min-width: 250px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            .info-panel {
+                padding: 20px;
+            }
+
+            .feature-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Photo Game Component</h1>
+            <p class="subtitle">
+                Un componente web moderno e responsive per un gioco di memoria fotografica, 
+                costruito con vanilla JavaScript e CSS Flexbox
+            </p>
+        </header>
+
+        <div class="demo-section">
+            <photo-game level="medium"></photo-game>
+        </div>
+
+        <div class="info-panel">
+            <h2>📋 Caratteristiche</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>📱 Responsive Design</h3>
+                    <p>Layout completamente responsive con CSS Flexbox, ottimizzato per mobile, tablet e desktop</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎨 Web Component</h3>
+                    <p>Componente riutilizzabile con Shadow DOM, facilmente integrabile in qualsiasi progetto</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ Performance</h3>
+                    <p>Animazioni fluide con CSS transitions e gestione efficiente dello stato</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 Game Logic</h3>
+                    <p>Sistema completo di punteggio, timer e tracking delle mosse</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔧 Configurabile</h3>
+                    <p>Livelli di difficoltà personalizzabili tramite attributi HTML</p>
+                </div>
+                <div class="feature-card">
+                    <h3>♿ Accessibile</h3>
+                    <p>Design moderno con supporto per diverse dimensioni di schermo</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h2>🚀 Come Usare</h2>
+            <p>
+                Per utilizzare il componente Photo Game nel tuo progetto, 
+                includi semplicemente il file JavaScript e aggiungi il tag custom:
+            </p>
+            <p>
+                <code>&lt;script src="photo-game.js"&gt;&lt;/script&gt;</code><br>
+                <code>&lt;photo-game level="easy"&gt;&lt;/photo-game&gt;</code>
+            </p>
+            <p>
+                Livelli disponibili: <code>easy</code> (4 coppie), 
+                <code>medium</code> (6 coppie), <code>hard</code> (8 coppie)
+            </p>
+        </div>
+
+        <div class="info-panel">
+            <h2>💡 Implementazioni Tecniche</h2>
+            <p>
+                <strong>Layout Responsive Flex:</strong> Tutti gli elementi utilizzano CSS Flexbox 
+                per garantire una disposizione ottimale su qualsiasi dispositivo.
+            </p>
+            <p>
+                <strong>Breakpoints:</strong> Media queries per 480px (mobile), 768px (tablet), 
+                e 1200px+ (desktop large) assicurano un'esperienza ottimale su ogni schermo.
+            </p>
+            <p>
+                <strong>Shadow DOM:</strong> Incapsulamento completo degli stili e del markup 
+                per evitare conflitti con il CSS globale.
+            </p>
+            <p>
+                <strong>Gestione Stato:</strong> Sistema di state management interno per 
+                tracciare carte girate, match trovati, e progressi del gioco.
+            </p>
+        </div>
+    </div>
+
+    <script src="photo-game.js"></script>
+</body>
+</html>
