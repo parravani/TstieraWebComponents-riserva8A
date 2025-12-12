@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Components - Tastiera Alfabetica</title>
+
+    <!-- Carica lo stile globale che contiene i font -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="../styles/game2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../styles/imagePreview.css" />
+    <link rel="stylesheet" href="styles/photo-game.css">
+    <style>
+        #start-game-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            padding: 15px 25px;
+            border-radius: 15px;
+            cursor: pointer;
+            border: 2px solid #fff;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+        }
+        photo-game-component {
+            opacity: 0.5;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+<div class="pulsantiera">
+    <div class="top"></div>
+    <div id="wordyToggleButton" class="control-image-button clickMe"><div class="action-area"></div></div>
+    <!-- Pulsante dedicato alla modalità simboli -->
+    <div id="simboToggleButton" class="control-image-button clickMe"><div class="action-area"></div></div>
+    <!-- Nuovo pulsante dedicato alla modalità foto -->
+    <div id="photoToggleButton" class="control-image-button clickMe"><div class="action-area"></div></div>
+</div>
+<div class="lavoro">
+    <div class="top"></div>
+    <div class="lavagna">
+        <div style="height: 15%; width: 98%; margin: 0% 1%;">
+            <alphabet-keyboard data-src="../data/letters.json" data-phoneme="../data/phonemes-new.json"></alphabet-keyboard>
+        </div>
+
+        <div id="game-container" style="margin-top: 20px; text-align: center; position: relative;">
+            <button id="start-game-button"><span class="rainbow-text">Click Me!</span></button>
+            <photo-game-component></photo-game-component>
+        </div>
+
+        <div style="height: 7vh; margin: 10px"></div>
+        <div style="height: 12vh;margin: 10px;display: flex;flex-direction: column;align-items: center;">
+            <!-- PERSONAGGI MAESTRI -->
+            <img id="typy-maestro" class="maestro-char" src="../img/typy-maestro.png" alt="Typy">
+            <img id="looky-maestro" class="maestro-char" src="../img/looky-maestro.png" alt="Looky">
+            <game-stage id="word-display-stage">
+                <word-display></word-display>
+                <word-display-flying id="word-display-animated"></word-display-flying>
+            </game-stage>
+        </div>
+
+        <div id="animation-container"></div>
+        <div class="tooltip" id="wordCharTooltip"></div>
+        <div class="img-preview" id="global-image-preview"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="preview" /></div>
+
+    </div>
+    <div class="coppie"></div>
+    <div class="sotto">
+        <div class="lavagnaIpaContainer">
+            <div id="homeButton" class="control-image-button clickMe" style="background-image: url('../Img/home.png'); position: absolute; width: 70px; height: 70px; left: -90px; top: 50%; transform: translateY(-50%);">
+                <div class="action-area"></div>
+            </div>
+            <div class="lavagnaIpa"></div>
+            <div class="top"></div>
+            <div class="top"></div>
+            <div class="IpaContainer">
+                <alphabet-keyboard data-src="../data/phonemes-new.json"></alphabet-keyboard>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="module" src="../manager/data/dataservice.js"></script>
+<script type="module" src="../manager/soundDispatcher/soundDispatcher.js"></script>
+<!-- 1. Carica prima i componenti base -->
+<script type="module" src="../components/letter-key/letter-key.js"></script>
+<script type="module" src="../components/alphabet-keyboard/alphabet-keyboard.js"></script>
+<script type="module" src="../components/game-stage/game-stage.js"></script>
+<script type="module" src="../components/word-display/word-display.js"></script>
+<script type="module" src="../components/word-display/word-display-animated.js"></script>
+<script type="module" src="../components/photo-game/photo-game-component.js"></script>
+
+
+<!--orchestratore-->
+<!-- 2. Carica dopo i manager che li utilizzano -->
+<!-- 2. Carica i manager e l'orchestratore -->
+<script type="module" src="../manager/imagePreview/imagePreviewDispatcher.js"></script>
+<script type="module" src="../manager/soundDispatcher/soundDispatcher.js"></script>
+<!--<script src="../manager/game/game1Manager.js"></script>-->
+<script type="module" src="../manager/game/game2Manager.js"></script>
+<script type="module" src="../manager/game/PhotoGameManager.js"></script>
+
+<script type="module">
+    import { photoGameManager } from '../manager/game/PhotoGameManager.js';
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        console.log('DOMContentLoaded caricato.');
+        const photoGameComponent = document.querySelector('photo-game-component');
+        const startGameButton = document.getElementById('start-game-button');
+
+        console.log('photoGameComponent trovato:', photoGameComponent);
+        if (photoGameComponent) {
+            await photoGameManager.init(photoGameComponent);
+            console.log('photoGameManager inizializzato con successo.');
+
+            startGameButton.addEventListener('click', () => {
+                photoGameManager.startGame();
+                startGameButton.style.display = 'none';
+                photoGameComponent.style.opacity = '1';
+            }, { once: true }); // Assicura che il listener venga eseguito solo una volta
+
+            // Gestione Pulsanti
+            const homeBtn = document.getElementById('homeButton');
+            const photoBtn = document.getElementById('photoToggleButton');
+            const wordyBtn = document.getElementById('wordyToggleButton');
+            const simboBtn = document.getElementById('simboToggleButton');
+
+            function activateButton(buttonToActivate) {
+                [wordyBtn, simboBtn, photoBtn].forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.classList.add('disabled-effect');
+                });
+                buttonToActivate.classList.add('active');
+                buttonToActivate.classList.remove('disabled-effect');
+            }
+
+            // Imposta Photo come attivo di default in questa pagina
+            activateButton(photoBtn);
+
+            homeBtn.addEventListener('click', () => {
+                window.location.href = '../index.html';
+            });
+
+            photoBtn.addEventListener('click', () => {
+                // Il gioco ora si avvia solo con il pulsante "Click Me".
+                // Questo pulsante può essere usato in futuro per resettare o altre azioni.
+                console.log("Il pulsante Photo è già attivo. Clicca 'Click Me' per iniziare.");
+            });
+
+            wordyBtn.addEventListener('click', () => {
+                window.location.href = '../index.html';
+            });
+
+            simboBtn.addEventListener('click', () => {
+                window.location.href = '../index.html';
+            });
+
+        } else {
+            console.error('photo-game-component non trovato nel DOM.');
+        }
+    });
+</script>
+</body>
+</html>
