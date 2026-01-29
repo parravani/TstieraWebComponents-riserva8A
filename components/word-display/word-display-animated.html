@@ -1,0 +1,109 @@
+<!-- File: components/word-display-animated/word-display-animated.html -->
+
+<template id="word-display-animated-template">
+    <style>
+        :host {
+            display: none; /* Nascosto di default */
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        :host(.visible) {
+            display: flex;
+        }
+
+        /* La nuova cornice esterna */
+        #animated-frame {
+            margin-top: 20px; /* sposta leggermente il rettangolo verso il basso per evitare sovrapposizioni col bottone 'again' */
+            padding: 28px; /* aumentato per allargare verticalmente il rettangolo interno */
+            border: 3px solid transparent; /* Bordo trasparente di default */
+            border-radius: 15px;
+            transition: border-color 0.5s ease;
+        }
+
+        #display-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .char-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            gap: 14px; /* aumenta lo spacing verticale fra lettera e trascrizione */
+        }
+
+        .placeholder {
+            width: 60px;
+            height: 84px; /* aumentata altezza del placeholder per dare più spazio verticale */
+            border: 2px solid transparent; /* Rende il bordo invisibile */
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            font-weight: bold;
+            transform: scale(1);
+            transform-origin: center center;
+            transition: transform 200ms ease-out;
+        }
+
+            .placeholder.letter-style {
+                font-family: var(--font-main);
+                font-size: 70px;
+            }
+
+            .placeholder.phoneme-style {
+                font-family: var(--font-phonetic);
+                font-size: 60px;
+            }
+
+        /* Quando la cornice è attiva, parte l'animazione */
+        #animated-frame.rainbow-active {
+            animation: rainbow-border 4s linear infinite;
+        }
+
+        @keyframes rainbow-border {
+            0% {
+                border-color: #ff0000;
+            }
+
+            15% {
+                border-color: #ff7f00;
+            }
+
+            30% {
+                border-color: #ffff00;
+            }
+
+            45% {
+                border-color: #00ff00;
+            }
+
+            60% {
+                border-color: #0000ff;
+            }
+
+            75% {
+                border-color: #4b0082;
+            }
+
+            90% {
+                border-color: #8f00ff;
+            }
+
+            100% {
+                border-color: #ff0000;
+            }
+        }
+    </style>
+   
+    <div id="animated-frame">
+        <div id="display-container"></div>
+    </div>
+</template>

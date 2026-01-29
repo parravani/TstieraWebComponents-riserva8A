@@ -1,0 +1,30 @@
+// File: /data/letterWordData.js
+
+export const letterWords = {
+    'A': { text: 'ape', fullPhonetic: 'eɪp', wordSound: 'Audio/frasi_lettere_parole/ape.wav' },
+    'B': { text: 'bee', fullPhonetic: 'biː', wordSound: 'Audio/frasi_lettere_parole/bee.wav' },
+    'C': { text: 'ceiling', fullPhonetic: 'siːlɪŋ', wordSound: 'Audio/frasi_lettere_parole/ceiling.wav' },
+    'D': { text: 'deep', fullPhonetic: 'diːp', wordSound: 'Audio/frasi_lettere_parole/deep.wav' },
+    'E': { text: 'eagle', fullPhonetic: 'iːɡl', wordSound: 'Audio/frasi_lettere_parole/eagle.wav' },
+    'F': { text: 'F', fullPhonetic: 'ef', wordSound: 'Audio/frasi_lettere_parole/f.wav' },
+    'G': { text: 'Gee', fullPhonetic: 'dʒiː', wordSound: 'Audio/frasi_lettere_parole/gee.wav' },
+    'H': { text: 'aitch', fullPhonetic: 'eɪtʃ', wordSound: 'Audio/frasi_lettere_parole/h.wav' },
+    'I': { text: 'Ice', fullPhonetic: 'aɪs', wordSound: 'Audio/frasi_lettere_parole/ice.wav' },
+    'J': { text: 'jail', fullPhonetic: 'dʒeɪl', wordSound: 'Audio/frasi_lettere_parole/jail.wav' },
+    'K': { text: 'Kail', fullPhonetic: 'keɪl', wordSound: 'Audio/frasi_lettere_parole/kail.wav' },
+    'L': { text: 'Ell', fullPhonetic: 'el', wordSound: 'Audio/frasi_lettere_parole/l.wav' },
+    'M': { text: 'Em', fullPhonetic: 'em', wordSound: 'Audio/frasi_lettere_parole/m.wav' },
+    'N': { text: 'en', fullPhonetic: 'en', wordSound: 'Audio/frasi_lettere_parole/n.wav' },
+    'O': { text: 'oak', fullPhonetic: 'əʊk', wordSound: 'Audio/frasi_lettere_parole/oak.wav' },
+    'P': { text: 'peach', fullPhonetic: 'piːtʃ', wordSound: 'Audio/frasi_lettere_parole/peach.wav' },
+    'Q': { text: 'queue', fullPhonetic: 'kjuː', wordSound: 'Audio/frasi_lettere_parole/queue.wav' },
+    'R': { text: 'are', fullPhonetic: 'ɑː', wordSound: 'Audio/frasi_lettere_parole/are.wav' },
+    'S': { text: 'Ess', fullPhonetic: 'es', wordSound: 'Audio/frasi_lettere_parole/s.wav' },
+    'T': { text: 'tea', fullPhonetic: 'tiː', wordSound: 'Audio/frasi_lettere_parole/tea.wav' },
+    'U': { text: 'UFO', fullPhonetic: 'juːefəʊ', wordSound: 'Audio/frasi_lettere_parole/ufo.wav' },
+    'V': { text: 'veal', fullPhonetic: 'viːl', wordSound: 'Audio/frasi_lettere_parole/veal.wav' },
+    'W': { text: 'double-u', fullPhonetic: 'dʌbəljuː', wordSound: 'Audio/frasi_lettere_parole/w.wav' },
+    'X': { text: 'exit', fullPhonetic: 'eksɪt', wordSound: 'Audio/frasi_lettere_parole/exit.wav' },
+    'Y': { text: 'Why', fullPhonetic: 'waɪ', wordSound: 'Audio/frasi_lettere_parole/y.wav' },
+    'Z': { text: 'zebra', fullPhonetic: 'zebrə', wordSound: 'Audio/frasi_lettere_parole/zebra.wav' }
+};

@@ -1,0 +1,165 @@
+/* Key pulse animation used for small pulsing effects */
+@keyframes key-pulse-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Short single pulse (used elsewhere for a quick feedback) */
+.key-pulse {
+    animation: key-pulse-animation 0.3s ease-in-out;
+}
+
+/* Continuous pulse effect for attention guidance (infinite) */
+.pulse-effect {
+    animation: key-pulse-animation 0.6s infinite ease-in-out;
+}
+
+/* Flash animation used for images/placeholders */
+@keyframes flash-animation {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+}
+
+.flash-image {
+    animation: flash-animation 1.5s infinite ease-in-out;
+}
+
+/* Subtle pulsing used when a letter is muted */
+@keyframes mute-pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.mute-letter {
+    opacity: 0.45;
+    filter: grayscale(70%);
+    transform-origin: center;
+    animation: mute-pulse 0.9s infinite ease-in-out;
+}
+
+.animation-blocked {
+    animation: none !important;
+}
+/* === AGGIUNGI QUI IL NUOVO CSS === */
+.simbo-pulse {
+    animation: simbo-pulse-animation 0.5s ease-in-out !important;
+    z-index: 1000 !important;
+    position: relative !important;
+    /* Bagliore dorato più sottile */
+    border: 2px solid #FFD700 !important;
+    background: linear-gradient(135deg, #ffff88 0%, #ffed4e 100%) !important;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 165, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.4) !important;
+    transform: scale(1.1) !important;
+}
+
+@keyframes simbo-pulse-animation {
+    0% {
+        transform: scale(1.1) !important;
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 165, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.4) !important;
+    }
+
+    50% {
+        transform: scale(1.15) !important;
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 165, 0, 0.8), inset 0 0 15px rgba(255, 255, 255, 0.6) !important;
+    }
+
+    100% {
+        transform: scale(1.1) !important;
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 165, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.4) !important;
+    }
+}
+
+/* Assicurati che gli elementi letter-key possano essere animati */
+letter-key {
+    transform-style: preserve-3d !important;
+    backface-visibility: hidden !important;
+}
+
+/* Effetto hover per il bottone simbo quando l'animazione è attiva */
+#simbo-button.animating {
+    animation: simbo-button-pulse 2s infinite;
+    opacity: 1 !important;
+    filter: grayscale(0%) !important;
+}
+
+@keyframes simbo-button-pulse {
+    0% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Stile per Simbo quando è disattivato */
+#simbo-button {
+    transition: all 0.3s ease;
+    opacity: 0.5;
+    filter: grayscale(70%);
+}
+.clickMe{
+    transition: transform 0.5s ease; 
+}
+.clickMe:hover {
+    /*animation: clickMeAnim 0.3s linear;*/
+    transform: translateX(50%);
+    filter: none;
+}
+
+/*@keyframes shakeAnim {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-3px);
+    }
+
+    50% {
+        transform: translateX(3px);
+    }
+
+    75% {
+        transform: translateX(-2px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.flying-symbol {
+    position: fixed;
+    z-index: 1000;
+    pointer-events: none; /* Per evitare che intercetti eventi del mouse durante il volo */
+    transition: top 0.7s cubic-bezier(0.5, 0, 0.75, 0), left 0.7s cubic-bezier(0.25, 0.5, 0.75, 1);
+}
+*/

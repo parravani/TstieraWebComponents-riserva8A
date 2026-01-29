@@ -1,0 +1,212 @@
+:root {
+    --font-main: "Comic Sans MS", cursive;
+    --font-phonetic: "Times New Roman", serif;
+    --color-A: #FF8C00; /* Colore per la lettera A */
+    /* ... qui in futuro aggiungeremo gli altri colori ... */
+}
+
+body {
+    font-family: var(--font-main);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #111;
+    color: white;
+}
+
+.lavoro, .pulsantiera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100vh;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.lavoro {
+    width: 100vw;
+}
+
+.pulsantiera {
+    width: 7vw;
+    height: 100%;
+    container-type: inline-size;
+    position: absolute;
+}
+
+/* Stile comune per i pulsanti con immagine */
+.control-image-button {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-color: #FFFFFF;
+    width: 80%;
+    height: 80cqw;
+    margin: 10%;
+    position: relative;
+    z-index: 999;
+    opacity: 1;
+}
+
+#paroleToggleButton {
+    background-image: url(../img/parole.png);
+}
+
+#wordyToggleButton {
+    background-image: url(../img/wordy.png);
+}
+
+#simboToggleButton {
+    background-image: url(../img/simbo.png);
+}
+
+#photoToggleButton {
+    background-image: url(../img/photo.png);
+}
+
+.disabled-effect {
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+
+.action-area {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    cursor: pointer;
+}
+
+.coppie {
+    width: 100%;
+    height: 5%;
+    width: 90%;
+    background: linear-gradient(to right, #34db58, #016301);
+    clip-path: polygon(2.5% 0, 97.5% 0, 100% 100%, 0 100%);
+}
+
+.top {
+    height: 7%;
+    width: 100%;
+}
+
+.lavagna {
+    width: 85.5%;
+    height: 50%;
+    background-color: black;
+    border: 3px solid white;
+    padding: 10px;
+    position: relative; /* Aggiunto per posizionare il bottone di test */
+    box-sizing: border-box;
+}
+
+    /*
+ * SOLUZIONE DEFINITIVA SPAZIATURA:
+ * Forza il contenitore dei "target" delle lettere a raggrupparle
+ * all'inizio, una accanto all'altra, per formare la parola correttamente.
+ */
+    .lavagna > .word-display-container {
+        display: flex !important;
+        justify-content: flex-start !important; /* Allinea le lettere all'inizio */
+    }
+
+/* Stile per i nuovi personaggi "maestri" */
+
+
+
+.sotto {
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to right, #34db58, #016301);
+    clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lavagnaIpaContainer {
+    position: relative;
+    height: 80%;
+    width: 64%;
+}
+
+.IpaContainer {
+    height: 75%; /* Ridotta l'altezza per compattare il blocco */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente la tastiera */
+    align-items: center; /* Centra orizzontalmente la tastiera */
+    font-family: var(--font-phonetic);
+}
+
+.lavagnaIpa {
+    position: absolute;
+    left: 50%;
+    top: 2%;
+    transform: translateX(-50%) perspective(400px) rotateX(5.5deg);
+    width: 119%;
+    height: 96%;
+    background-color: black;
+    border: 3px solid white;
+    z-index: -1;
+}
+
+/* ===   STILI PER L'ANTEPRIMA FISSA (TASTIERA FONETICA) === */
+/* ======================================================= */
+#phonetic-image-preview {
+    position: absolute;
+    /* Posizione finale verticale */
+    bottom: 3cm;
+    /* La posizione orizzontale 'left' è gestita da JS */
+    width: 150px;
+    height: 150px;
+    background-color: rgba(30, 30, 30, 0.8);
+    border: 2px solid #fff;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    /* Animazione fluida per opacità e posizione verticale */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    /* Stato iniziale: spostato 40px verso il basso */
+    transform: translateY(40px);
+}
+
+    #phonetic-image-preview.visible {
+        opacity: 1;
+        /* Stato finale: torna alla sua posizione naturale */
+        transform: translateY(0);
+    }
+
+#phonetic-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* Stile per i tooltip delle lettere e dei simboli */
+/* Usiamo l'ID per una maggiore specificità, assicurandoci che lo stile venga applicato */
+#wordCharTooltip {
+    font-family: var(--font-phonetic); /* Usa il font per i simboli IPA */
+    font-size: 32px; /* Aumenta la dimensione del testo */
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+/* Stili per disattivare l'hover della tastiera alfabetica in modalità Photo Game */
+#mainAlphabetKeyboard.photo-mode-no-hover letter-key .key-box:hover {
+    transform: none !important; /* Rimuove la trasformazione translateY */
+    box-shadow: none !important; /* Rimuove l'ombra */
+    /* Assicurati di aggiungere qui qualsiasi altra proprietà che cambia su :hover se necessario */
+}
+
+

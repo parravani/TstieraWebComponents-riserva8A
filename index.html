@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/animations.css">
     <link rel="stylesheet" href="styles/game2.css">    
+    <style></style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
     <link rel="stylesheet" href="styles/imagePreview.css" />
@@ -18,9 +19,9 @@
         <div class="top"></div>
         <div id="wordyToggleButton" class="control-image-button disabled-effect clickMe"><div class="action-area"></div></div>
         <!-- Pulsante dedicato alla modalità simboli -->
-        <div id="simboToggleButton" class="control-image-button disabled-effect clickMe"><div class="action-area"></div></div>
-        <!-- Nuovo pulsante dedicato alla modalità foto -->
-        <div id="photoToggleButton" class="control-image-button clickMe"><div class="action-area"></div></div>
+        <div id="simboToggleButton" class="control-image-button disabled-effect clickMe"><div class="action-area"></div></div> 
+        <!-- Nuovo pulsante unico per i giochi -->
+        <div id="gamesToggleButton" class="control-image-button clickMe"><div class="action-area"></div></div>
     </div>
     <div class="lavoro">
         <div class="top"></div>
@@ -77,13 +78,16 @@
 
     <script type="module">
         document.addEventListener('DOMContentLoaded', () => {
-            const photoBtn = document.getElementById('photoToggleButton');
             const wordyBtn = document.getElementById('wordyToggleButton');
             const simboBtn = document.getElementById('simboToggleButton');
+            const gamesBtn = document.getElementById('gamesToggleButton');
+
+            // Controlla lo stato del gioco dal localStorage quando la pagina carica
+            // Rimuovi qualsiasi pulsing sui bottoni photo/sound
 
             // Funzione per gestire lo stato attivo/disattivo
             function activateButton(buttonToActivate) {
-                [wordyBtn, simboBtn, photoBtn].forEach(btn => {
+                [wordyBtn, simboBtn, gamesBtn].forEach(btn => {
                     btn.classList.remove('active');
                     btn.classList.add('disabled-effect');
                 });
@@ -94,7 +98,34 @@
             // Imposta Wordy come attivo di default
             activateButton(wordyBtn);
 
-            photoBtn.addEventListener('click', () => {
+            // Salva la posizione e dimensione dei controlli per riproduzione in photo-game
+            function snapshotControlsLayout() {
+                try {
+                    const layout = {};
+                    const setRect = (el, key) => {
+                        if (!el) return;
+                        const r = el.getBoundingClientRect();
+                        layout[key] = { left: r.left, top: r.top, right: r.right, bottom: r.bottom, width: r.width, height: r.height };
+                    };
+                    setRect(wordyBtn, 'wordy');
+                    setRect(simboBtn, 'simbo');
+                    setRect(gamesBtn, 'games');
+                    localStorage.setItem('controlsLayout', JSON.stringify(layout));
+                } catch {}
+            }
+
+            // Stile immagine per il pulsante giochi
+            try {
+                gamesBtn.style.backgroundImage = 'url(img/giochi.png)';
+                gamesBtn.style.backgroundSize = '100% 100%';
+                gamesBtn.style.backgroundPosition = 'center';
+            } catch {}
+
+            gamesBtn.addEventListener('click', () => {
+                // Pulisce lo stato prima di andare alla pagina del gioco
+                localStorage.removeItem('photoGameStatus');
+                localStorage.removeItem('soundGameMode'); // Assicura hard reset
+                snapshotControlsLayout();
                 window.location.href = 'games/photo-game.html';
             });
 

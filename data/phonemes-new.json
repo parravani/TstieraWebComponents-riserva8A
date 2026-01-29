@@ -1,0 +1,756 @@
+﻿{
+  "layout": [
+    {
+      "row": 1,
+      "width": "100%",
+      "keys": [
+        {
+          "ch": "p",
+          "word": "PIG",
+          "wordPhonetic": "pɪɡ",
+          "wordCharPhonetics": [ "p", "ɪ", "ɡ" ],
+          "img": "img/imasimboli/pig.png",
+          "sound": "audio/tastiere/p.wav",
+          "wordSound": "audio/imasimbosuoni/pig.wav",
+          "translation": "maiale",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ffff00",
+            "borderColor": "#ffff00",
+            "textShadow": "1px 1px 0 #00FF66"
+          }
+        },
+        {
+          "ch": "b",
+          "word": "BOTTLE",
+          "wordPhonetic": "bɒtl",
+          "wordCharPhonetics": [ "b", "ɒ", "t","","l", "" ],
+          "img": "img/imasimboli/bottle.png",
+          "sound": "audio/tastiere/b.wav",
+          "wordSound": "audio/imasimbosuoni/bottle.wav",
+          "translation": "bottiglia",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ffffff",
+            "borderColor": "#ffffff",
+            "textShadow": "1px 1px 0 #00FF66"
+          }
+        },
+        {
+          "ch": "t",
+          "word": "TABLE",
+          "wordPhonetic": "teɪbl",
+           "wordCharPhonetics": [ "t", "eɪ", "b","l", "" ],
+          "img": "img/imasimboli/table.png",
+          "sound": "audio/tastiere/t.wav",
+          "wordSound": "audio/imasimbosuoni/table.wav",
+          "translation": "tavolo",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ffff00",
+            "borderColor": "#ffff00",
+            "textShadow": "1px 1px 0 #00FF66"
+          }
+        },
+        {
+          "ch": "d",
+          "word": "DOG",
+          "wordPhonetic": "dɒɡ",
+          "wordCharPhonetics": [ "d", "ɒ", "g"],
+          "img": "img/imasimboli/dog.png",
+          "sound": "audio/tastiere/d.wav",
+          "wordSound": "audio/imasimbosuoni/dog.wav",
+          "translation": "cane",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ffffff",
+            "borderColor": "#ffffff",
+            "textShadow": "1px 1px 0 #00FF66"
+          }
+        },
+        {
+          "ch": "tʃ",
+          "word": "CHURCH",
+          "wordPhonetic": "tʃɜːtʃ",
+          "wordCharPhonetics": [ "tʃ","","ɜː","", "tʃ","" ],
+          "img": "img/imasimboli/church.png",
+          "sound": "audio/tastiere/tʃ.wav",
+          "wordSound": "audio/imasimbosuoni/church.wav",
+          "translation": "chiesa",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ff0000",
+            "borderColor": "#ff0000",
+            "textShadow": "1px 1px 0 #00FF66"
+          }
+        },
+        {
+          "ch": "dʒ",
+          "word": "GIRAFFE",
+          "wordPhonetic": "dʒərɑːf",
+          "wordCharPhonetics": [ "dʒ","ə","r","ɑː","f","","" ],
+          "img": "img/imasimboli/giraffe.png",
+          "sound": "audio/tastiere/dʒ.wav",
+          "wordSound": "audio/imasimbosuoni/giraffe.wav",
+          "translation": "giraffa",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ff0000",
+            "borderColor": "#ff0000",
+            "textShadow": "1px 1px 0 #FF8C00"
+          }
+        },
+        {
+          "ch": "iː",
+          "word": "EEL",
+          "wordPhonetic": "i:l",
+          "wordCharPhonetics": [ "iː", "", "l" ],
+          "img": "img/imasimboli/eel.png",
+          "sound": "audio/tastiere/ilunga.wav",
+          "wordSound": "audio/imasimbosuoni/eel.wav",
+          "translation": "anguilla",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#00ff66",
+            "borderColor": "#00ff66"
+          }
+        },
+        {
+          "ch": "ɪ",
+          "word": "INK",
+          "wordPhonetic": "ɪŋk",
+          "wordCharPhonetics": [ "ɪ", "ŋ", "k" ],
+          "img": "img/imasimboli/ink.png",
+          "sound": "audio/tastiere/ɪ.wav",
+          "wordSound": "audio/imasimbosuoni/ink.wav",
+          "translation": "inchiostro",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#87cefa",
+            "borderColor": "#87cefa",
+            "textShadow": "1px 1px 0 #ffffff"
+          }
+        },
+        {
+          "ch": "ʊ",
+          "word": "BOOK",
+          "wordPhonetic": "bʊk",
+          "wordCharPhonetics": [ "b", "ʊ","", "k" ],
+          "img": "img/imasimboli/book.png",
+          "sound": "audio/tastiere/ʊ.wav",
+          "wordSound": "audio/imasimbosuoni/book.wav",
+          "translation": "libro",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#87cefa",
+            "borderColor": "#87cefa",
+            "textShadow": "1px 1px 0 #ffffff"
+          }
+        },
+        {
+          "ch": "uː",
+          "word": "MOON",
+          "wordPhonetic": "muːn",
+          "wordCharPhonetics": [ "m", "uː","", "n" ],
+          "img": "img/imasimboli/moon.png",
+          "sound": "audio/tastiere/ulunga.wav",
+          "wordSound": "audio/imasimbosuoni/moon.wav",
+          "translation": "luna",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#00ff66",
+            "borderColor": "#00ff66"
+          }
+        },
+        {
+          "ch": "ɪə",
+          "word": "EAR",
+          "wordPhonetic": "ɪə",
+          "img": "img/imasimboli/ear.png",
+          "wordCharPhonetics": [ "i:","ə","" ],
+          "sound": "audio/tastiere/ɪə.wav",
+          "wordSound": "audio/imasimbosuoni/ear.wav",
+          "translation": "orecchio",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#87cefa",
+            "borderColor": "#87cefa",
+            "textShadow": "1px 1px 0 #ffffff"
+          }
+        },
+        {
+          "ch": "ɔɪ",
+          "word": "OIL",
+          "wordPhonetic": "ɔɪl",
+          "wordCharPhonetics": [ "ɔɪ", "", "l" ],
+          "img": "img/imasimboli/oil.png",
+          "sound": "audio/tastiere/ɔɪ.wav",
+          "wordSound": "audio/imasimbosuoni/oil.wav",
+          "translation": "olio",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#87cefa",
+            "borderColor": "#87cefa",
+            "textShadow": "1px 1px 0 #ffffff"
+          }
+        },
+        {
+          "ch": "aɪ",
+          "word": "EYE",
+          "wordPhonetic": "aɪ",
+          "img": "img/imasimboli/eye.png",
+          "wordCharPhonetics": [ "","aɪ", "" ],
+          "sound": "audio/tastiere/aɪ.wav",
+          "wordSound": "audio/imasimbosuoni/eye.wav",
+          "translation": "occhio",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#87d0fa",
+            "borderColor": "#87cefa",
+            "textShadow": "1px 1px 0 #ffffff"
+          }
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "width": "95%",
+      "keys": [
+        {
+          "ch": "θ",
+          "word": "THUMB",
+          "wordPhonetic": "θʌm",
+          "wordCharPhonetics": [ "θ","", "ʌ", "m","" ],
+          "img": "img/imasimboli/thumb.png",
+          "sound": "audio/tastiere/θ.wav",
+          "wordSound": "audio/imasimbosuoni/thumb.wav",
+          "translation": "pollice",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ff0000",
+            "borderColor": "#ff0000",
+            "textShadow": "1px 1px 0 #FFFF00"
+          }
+        },
+        {
+          "ch": "ð",
+          "word": "THERE",
+          "wordPhonetic": "ðeə",
+          "wordCharPhonetics": [ "ð","","eə","", "" ],
+          "img": "img/imasimboli/there.png",
+          "sound": "audio/tastiere/ð.wav",
+          "wordSound": "audio/imasimbosuoni/there.wav",
+          "translation": "lì,la",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ff0000",
+            "borderColor": "#ff0000",
+            "textShadow": "1px 1px 0 #FFFFFF"
+          }
+        },
+        {
+          "ch": "k",
+          "word": "KING",
+          "wordPhonetic": "kɪŋ",
+          "wordCharPhonetics": [ "k", "ɪ", "ŋ","" ],
+          "img": "img/imasimboli/king.png",
+          "sound": "audio/tastiere/k.wav",
+          "wordSound": "audio/imasimbosuoni/king.wav",
+          "translation": "re",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#FFFF00",
+            "borderColor": "#FFFF00"
+          }
+        },
+        {
+          "ch": "ɡ",
+          "word": "GLASS",
+          "wordPhonetic": "ɡlɑːs",
+          "wordCharPhonetics": [ "ɡ", "l", "ɑː", "s","" ],
+          "img": "img/imasimboli/glass.png",
+          "sound": "audio/tastiere/g.wav",
+          "wordSound": "audio/imasimbosuoni/glass.wav",
+          "translation": "bicchiere",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#FFFFFF",
+            "borderColor": "#FFFFFF"
+          }
+        },
+        {
+          "ch": "f",
+          "word": "FOOT",
+          "wordPhonetic": "fʊt",
+          "wordCharPhonetics": [ "f", "ʊ","", "t" ],
+          "img": "img/imasimboli/foot.png",
+          "sound": "audio/tastiere/f.wav",
+          "wordSound": "audio/imasimbosuoni/foot.wav",
+          "translation": "piede",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ffff00",
+            "borderColor": "#ffff00"
+          }
+        },
+        {
+          "ch": "v",
+          "word": "VASE",
+          "wordPhonetic": "vɑːz",
+          "wordCharPhonetics": [ "v", "ɑː", "z","" ],
+          "img": "img/imasimboli/vase.png",
+          "sound": "audio/tastiere/v.wav",
+          "wordSound": "audio/imasimbosuoni/vase.wav",
+          "translation": "vaso",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#FFFFFF",
+            "borderColor": "#FFFFFF"
+          }
+        },
+        {
+          "ch": "e",
+          "word": "EGG",
+          "wordPhonetic": "eɡ",
+          "wordCharPhonetics": [ "e", "ɡ","" ],
+          "img": "img/imasimboli/egg.png",
+          "sound": "audio/tastiere/e.wav",
+          "wordSound": "audio/imasimbosuoni/egg.wav",
+          "translation": "uovo",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#0f99ef",
+            "borderColor": "#87cefa"
+          }
+        },
+        {
+          "ch": "ə",
+          "word": "ALARM",
+          "wordPhonetic": "əlɑːm",
+          "wordCharPhonetics": [ "ə", "l", "ɑː","", "m" ],
+          "img": "img/imasimboli/alarm.png",
+          "sound": "audio/tastiere/ə.wav",
+          "wordSound": "audio/imasimbosuoni/alarm.wav",
+          "translation": "allarme",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#87CEFA",
+            "borderColor": "#87CEFA"
+          }
+        },
+        {
+          "ch": "ɜː",
+          "word": "EARTH",
+          "wordPhonetic": "ɜːθ",
+          "wordCharPhonetics": [ "ɜː","","", "θ","" ],
+          "img": "img/imasimboli/earth.png",
+          "sound": "audio/tastiere/ɜlunga.wav",
+          "wordSound": "audio/imasimbosuoni/earth.wav",
+          "translation": "terra",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#00ff66",
+            "borderColor": "#00ff66"
+          }
+        },
+        {
+          "ch": "ɔː",
+          "word": "DOOR",
+          "wordPhonetic": "dɔː",
+          "wordCharPhonetics": [ "d", "ɔː","","" ],
+          "img": "img/imasimboli/door.png",
+          "sound": "audio/tastiere/ɔlunga.wav",
+          "wordSound": "audio/imasimbosuoni/door.wav",
+          "translation": "porta",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#00ff66",
+            "borderColor": "#00ff66"
+          }
+        },
+        {
+          "ch": "eɪ",
+          "word": "APE",
+          "wordPhonetic": "eɪp",
+          "wordCharPhonetics": [ "eɪ", "p", "" ],
+          "img": "img/imasimboli/ape.png",
+          "sound": "audio/tastiere/eɪ.wav",
+          "wordSound": "audio/imasimbosuoni/ape.wav",
+          "translation": "scimmia",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ff8c00",
+            "borderColor": "#ff8c00"
+          }
+        },
+        {
+          "ch": "eə",
+          "word": "AIRPLANE",
+          "wordPhonetic": "ˈeəpleɪn",
+          "wordCharPhonetics": [ "eə","","", "p", "l", "eɪ", "n","" ],
+          "img": "img/imasimboli/airplane.png",
+          "sound": "audio/tastiere/eə.wav",
+          "wordSound": "audio/imasimbosuoni/airplane.wav",
+          "translation": "aereo",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ff8c00",
+            "borderColor": "#ff8c00"
+          }
+        },
+        {
+          "ch": "əʊ",
+          "word": "OBOE",
+          "wordPhonetic": "əʊbəʊ",
+          "wordCharPhonetics": [ "əʊ", "b", "əʊ","" ],
+          "img": "img/imasimboli/oboe.png",
+          "sound": "audio/tastiere/əʊ.wav",
+          "wordSound": "audio/imasimbosuoni/oboe.wav",
+          "translation": "oboe",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#cf39cf",
+            "borderColor": "#cf39cf"
+          }
+        }
+      ]
+    },
+    {
+      "row": 3,
+      "width": "90%",
+      "keys": [
+        {
+          "ch": "s",
+          "word": "SUN",
+          "wordPhonetic": "sʌn",
+
+          "img": "img/imasimboli/sun.png",
+          "sound": "audio/tastiere/s.wav",
+          "wordSound": "audio/imasimbosuoni/sun.wav",
+          "translation": "sole",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ffff00",
+            "borderColor": "#ffff00"
+          }
+        },
+        {
+          "ch": "z",
+          "word": "ZEBRA",
+          "wordPhonetic": "zebrə",
+          "wordCharPhonetics": [ "z", "e", "b", "r", "ə" ],
+          "img": "img/imasimboli/zebra.png",
+          "sound": "audio/tastiere/z.wav",
+          "wordSound": "audio/imasimbosuoni/zebra.wav",
+          "translation": "zebra",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#FFFFFF",
+            "borderColor": "#FFFFFF"
+          }
+        },
+        {
+          "ch": "ʃ",
+          "word": "SHOP",
+          "wordPhonetic": "ʃɒp",
+          "wordCharPhonetics": [ "ʃ","", "ɒ", "p" ],
+          "img": "img/imasimboli/shop.png",
+          "sound": "audio/tastiere/ʃ.wav",
+          "wordSound": "audio/imasimbosuoni/shop.wav",
+          "translation": "negozio",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ff0000",
+            "borderColor": "#ff0000",
+            "textShadow": "1px 1px 3px yellow"
+          }
+        },
+        {
+          "ch": "ʒ",
+          "word": "TELEVISION",
+          "wordPhonetic": "telɪvɪʒn",
+          "wordCharPhonetics": [ "t", "e", "l", "ɪ", "v", "ɪ", "ʒ","","", "n" ],
+          "img": "img/imasimboli/television.png",
+          "sound": "audio/tastiere/ʒ.wav",
+          "wordSound": "audio/imasimbosuoni/television.wav",
+          "translation": "televisione",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ff0000",
+            "borderColor": "#ff0000",
+            "textShadow": "1px 1px 3px #ffffff"
+          }
+        },
+        {
+          "ch": "l",
+          "word": "LION",
+          "wordPhonetic": "laɪən",
+          "wordCharPhonetics": [ "l", "aɪ", "ə", "n" ],
+          "img": "img/imasimboli/lion.png",
+          "sound": "audio/tastiere/l.wav",
+          "wordSound": "audio/imasimbosuoni/lion.wav",
+          "translation": "leone",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#FFFFFF",
+            "borderColor": "#FFFFFF"
+          }
+        },
+        {
+          "ch": "n",
+          "word": "NOSE",
+          "wordPhonetic": "nəʊz",
+          "wordCharPhonetics": [ "n", "əʊ", "z","" ],
+          "img": "img/imasimboli/nose.png",
+          "sound": "audio/tastiere/n.wav",
+          "wordSound": "audio/imasimbosuoni/nose.wav",
+          "translation": "naso",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#FFFFFF",
+            "borderColor": "#FFFFFF"
+          }
+        },
+        {
+          "ch": "æ",
+          "word": "ANT",
+          "wordPhonetic": "ænt",
+          "wordCharPhonetics": [ "æ", "n", "t" ],
+          "img": "img/imasimboli/ant.png",
+          "sound": "audio/tastiere/æ.wav",
+          "wordSound": "audio/imasimbosuoni/ant.wav",
+          "translation": "formica",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#00ff66",
+            "borderColor": "#00ff66"
+          }
+        },
+        {
+          "ch": "ʌ",
+          "word": "UP",
+          "wordPhonetic": "ʌp",
+          "wordCharPhonetics": [ "ʌ", "p" ],
+          "img": "img/imasimboli/up.png",
+          "sound": "audio/tastiere/ʌ.wav",
+          "wordSound": "audio/imasimbosuoni/up.wav",
+          "translation": "su",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#00BFFF",
+            "borderColor": "#00BFFF"
+          }
+        },
+        {
+          "ch": "ɑː",
+          "word": "ARK",
+          "wordPhonetic": "ɑːk",
+          "wordCharPhonetics": [ "ɑː","", "k" ],
+          "img": "img/imasimboli/ark.png",
+          "sound": "audio/tastiere/alunga.wav",
+          "wordSound": "audio/imasimbosuoni/ark.wav",
+          "translation": "arca",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#00ff66",
+            "borderColor": "#00ff66"
+          }
+        },
+        {
+          "ch": "ɒ",
+          "word": "OX",
+          "wordPhonetic": "ɒks",
+          "wordCharPhonetics": [ "ɒ", "ks" ],
+          "img": "img/imasimboli/ox.png",
+          "sound": "audio/tastiere/ɒ.wav",
+          "wordSound": "audio/imasimbosuoni/ox.wav",
+          "translation": "",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#00bfff",
+            "borderColor": "#00bfff"
+          }
+        },
+         {
+          "ch": "aʊ",
+          "word": "OWL",
+          "wordPhonetic": "aʊl",
+          "wordCharPhonetics": [ "aʊ","", "l" ],
+          "img": "img/imasimboli/owl.png",
+          "sound": "audio/tastiere/aʊ.wav",
+          "wordSound": "audio/imasimbosuoni/owl.wav",
+          "translation": "gufo",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#87cefa",
+            "borderColor": "#87cefa"
+          }
+        },
+        { "ch": "ʊə",
+         "word": "TOURIST",
+          "wordPhonetic": "tʊərɪst",
+          "wordCharPhonetics": [ "t","", "ʊ", "ər", "ɪ", "s","t" ],
+           "img": "img/imasimboli/tourist.png", 
+            "sound": "audio/tastiere/ʊə.wav",
+           "wordSound": "audio/IMASIMBOSUONI/tourist.wav",
+           "translation": "turista", 
+           "previewPosition": "fixed",
+           "style": { 
+            "color": "#FFFF00",
+             "borderColor": "#FFFF00"
+            }
+          }
+      ]
+    },
+    {
+      "row": 4,
+      "width": "85%",
+      "keys": [
+        {
+          "ch": "m",
+          "word": "MUSHROOM",
+          "wordPhonetic": "mʌʃrʊm",
+          "wordCharPhonetics": [ "m", "ʌ", "ʃ","", "r", "ʊ","", "m" ],
+          "img": "img/imasimboli/mushroom.png",
+          "sound": "audio/tastiere/m.wav",
+          "wordSound": "audio/imasimbosuoni/mushroom.wav",
+          "translation": "fungo",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ffffff",
+            "borderColor": "#ffffff"
+          }
+        },
+        {
+          "ch": "ŋ",
+          "word": "RING",
+          "wordPhonetic": "rɪŋ",
+          "wordCharPhonetics": [ "r", "ɪ", "ŋ","" ],
+          "img": "img/imasimboli/ring.png",
+          "sound": "audio/tastiere/ŋ.wav",
+          "wordSound": "audio/imasimbosuoni/ring.wav",
+          "translation": "anello",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ff0000",
+            "borderColor": "#ff0000",
+            "textShadow": "1px 1px 0 #FFFFFF"
+          }
+        },
+         {
+          "ch": "h",
+          "word": "HORSE",
+          "wordPhonetic": "hɔːs",
+          "wordCharPhonetics": [ "h", "ɔː","", "s","" ],
+          "img": "img/imasimboli/horse.png",
+          "sound": "audio/tastiere/h.wav",
+          "wordSound": "audio/imasimbosuoni/horse.wav",
+          "translation": "cavallo",
+          "previewPosition": "fixed",
+           "style": {
+            "color": "#ffff00",
+            "borderColor": "#ffff00"
+          }
+        },
+        {
+          "ch": "r",
+          "word": "RED",
+          "wordPhonetic": "red",
+          "wordCharPhonetics": [ "r", "e", "d" ],
+          "img": "img/imasimboli/red.png",
+          "sound": "audio/tastiere/r.wav",
+          "wordSound": "audio/imasimbosuoni/red.wav",
+          "translation": "rosso",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#ffffff",
+            "borderColor": "#ffffff"
+          }
+        },
+        {
+          "ch": "w",
+          "word": "WHALE",
+          "wordPhonetic": "weɪl",
+          "wordCharPhonetics": [ "w","", "eɪ", "l","" ],
+          "img": "img/imasimboli/whale.png",
+          "sound": "audio/tastiere/w.wav",
+          "wordSound": "audio/imasimbosuoni/whale.wav",
+          "translation": "balena",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#c29098",
+            "borderColor": "#c29098",
+            "textShadow": "1px 1px 0 #00FF66"
+          }
+
+
+        },
+       {
+          "ch": "j",
+          "word": "YELLOW",
+          "wordPhonetic": "jeləʊ",
+          "wordCharPhonetics": [ "j", "e", "l","", "əʊ","" ],
+          "img": "img/imasimboli/yellow.png",
+          "sound": "audio/tastiere/j.wav",
+          "wordSound": "audio/imasimbosuoni/yellow.wav",
+          "translation": "giallo",
+          "previewPosition": "fixed",
+           "style": {
+            "color": "#c29098",
+            "borderColor": "#c29098",
+            "textShadow": "1px 1px 0 #00FF66"
+          }
+        },
+      
+       
+        {
+          "ch": "double",
+          "word": "DOUBLE",
+          "wordPhonetic": "dʌbl",
+          "wordCharPhonetics": [ "d", "ʌ","", "b","l","" ],
+          "img": "img/imasimboli/double.png",
+          "sound": "audio/tastiere/double.wav",
+          "wordSound": "audio/imasimbosuoni/double.wav",
+          "translation": "doppio",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#FFFFFF",
+            "borderColor": "#FFFFFF",
+            "fontFamily": "Times New Roman",
+            "flex": "2 1 3.5%"
+          }
+        },
+        {
+          "ch": "aɪə",
+          "word": "FIRE",
+          "wordPhonetic": "faɪə",
+          "wordCharPhonetics": [ "f", "aɪ", "ə","" ],
+          "img": "img/imasimboli/fire.png",
+          "sound": "audio/tastiere/aɪə.wav",
+          "wordSound": "audio/imasimbosuoni/fire.wav",
+          "translation": "fuoco",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#00bfff",
+            "borderColor": "#00bfff"
+          }
+        },
+        {
+          "ch": "aʊə",
+          "word": "TOWER",
+          "wordPhonetic": "taʊə",
+          "wordCharPhonetics": [ "t", "aʊ","", "ə","" ],
+          "img": "img/imasimboli/tower.png",
+          "sound": "audio/tastiere/aʊə.wav",
+          "wordSound": "audio/imasimbosuoni/tower.wav",
+          "translation": "torre",
+          "previewPosition": "fixed",
+          "style": {
+            "color": "#00bfff",
+            "borderColor": "#00BFFF"
+          }
+        }
+      ]
+    }
+  ]
+}

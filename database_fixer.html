@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Correttore Silent Letters</title>
+    <style>
+        body { font-family: sans-serif; padding: 2em; background: #222; color: #eee; }
+        button { padding: 1em 2em; font-size: 1.2em; cursor: pointer; background: #00c853; color: white; border: none; border-radius: 5px; }
+        #log { margin-top: 20px; white-space: pre-wrap; font-family: monospace; background: #333; padding: 10px; height: 400px; overflow-y: scroll; }
+    </style>
+</head>
+<body>
+    <h1>Correttore Automatico Silent Letters</h1>
+    <p>Seleziona il file <code>database_words_complete.json</code>. Lo script calcolerà le lettere mute per tutte le parole.</p>
+    <input type="file" id="fileInput" accept=".json" style="display:none">
+    <button onclick="document.getElementById('fileInput').click()">Carica Database e Correggi</button>
+    <div id="log"></div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const logDiv = document.getElementById('log');
+
+        function log(msg) {
+            logDiv.textContent += msg + '\n';
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+
+        // Lista dei fonemi validi (ordinati per lunghezza per il parsing greedy)
+        const validPhonemes = [
+            "tʃ", "dʒ", "aɪ", "eɪ", "ɔɪ", "aʊ", "əʊ", "ɪə", "eə", "ʊə", "iː", "uː", "ɔː", "ɑː", "ɜː", 
+            "p", "b", "t", "d", "k", "ɡ", "f", "v", "θ", "ð", "s", "z", "ʃ", "ʒ", "h", "m", "n", "ŋ", "l", "r", "j", "w",
+            "ɪ", "e", "æ", "ʌ", "ɒ", "ʊ", "ə"
+        ];
+
+        function parsePhonetic(phonetic) {
+            let clean = phonetic.replace(/[\/\[\]]/g, '').replace(/[ˈˌ.]/g, '').trim();
+            // Normalizzazioni comuni
+            clean = clean.replace(/g/g, 'ɡ').replace(/ɹ/g, 'r').replace(/ɛ/g, 'e').replace(/oʊ/g, 'əʊ').replace(/:/g, 'ː');
+            
+            const symbols = [];
+            while (clean.length > 0) {
+                let match = validPhonemes.find(p => clean.startsWith(p));
+                if (!match) {
+                    // Fallback per caratteri singoli non mappati
+                    match = clean[0]; 
+                }
+                symbols.push(match);
+                clean = clean.substring(match.length);
+            }
+            return symbols;
+        }
+
+        function isVowelLetter(char) {
+            return ['a','e','i','o','u','y'].includes(char.toLowerCase());
+        }
+
+        function isVowelPhoneme(sym) {
+            return ["iː","uː","ɔː","ɑː","ɜː","ɪ","e","æ","ʌ","ɒ","ʊ","ə","aɪ","eɪ","ɔɪ","aʊ","əʊ","ɪə","eə","ʊə"].includes(sym);
+        }
+
+        function calculateSilentIndexes(word, fullPhonetic) {
+            const letters = Array.from(word);
+            const phonemes = parsePhonetic(fullPhonetic);
+            const silent = [];
+            
+            let l = 0; // cursore lettere
+            let p = 0; // cursore fonemi
+
+            while (l < letters.length) {
+                const char = letters[l].toLowerCase();
+                const phoneme = phonemes[p];
+
+                // 1. Fine dei fonemi: tutte le lettere restanti sono mute (es. 'e' finale)
+                if (!phoneme) {
+                    silent.push(l);
+                    l++;
+                    continue;
+                }
+
+                // 2. Match esatto o plausibile (es. 'c' -> 'k')
+                // Semplificazione: se consonante corrisponde a consonante o vocale a vocale
+                let isMatch = false;
+                
+                // Mappature dirette comuni
+                if (char === 'c' && (phoneme === 'k' || phoneme === 's' || phoneme === 'ʃ')) isMatch = true;
+                else if (char === 'x' && (phoneme === 'k' || phoneme === 'z')) isMatch = true; // x -> ks, match k
+                else if (char === 'q' && phoneme === 'k') isMatch = true;
+                else if (char === 'j' && phoneme === 'dʒ') isMatch = true;
+                else if (char === 'y' && (phoneme === 'j' || isVowelPhoneme(phoneme))) isMatch = true;
+                else if (char === phoneme) isMatch = true;
+                else if (isVowelLetter(char) && isVowelPhoneme(phoneme)) isMatch = true;
+                // Consonanti che non matchano
+                else if (!isVowelLetter(char) && !isVowelPhoneme(phoneme)) {
+                    // Controlla casi speciali come 'ph' -> 'f'
+                    if (char === 'p' && letters[l+1] === 'h' && phoneme === 'f') isMatch = true;
+                    else if (char === 'h' && letters[l-1] === 'p' && phoneme === 'f') { /* gestito dal p */ }
+                    else if (char === 't' && phoneme === 'ʃ') isMatch = true; // tion
+                    else if (char === 's' && phoneme === 'z') isMatch = true;
+                }
+
+                if (isMatch) {
+                    // Caso speciale 'x' -> /ks/. La 'x' consuma /k/, il prossimo fonema /s/ è implicito nella x?
+                    // Per semplicità, avanziamo.
+                    l++;
+                    p++;
+                } else {
+                    // Mismatch. È una lettera muta?
+                    
+                    // Caso 1: Vocale scritta ma fonema consonante (es. 'o' in abandon -> 'n')
+                    // Se la lettera è vocale e il fonema è consonante, la vocale è probabilmente saltata (schwa elision)
+                    if (isVowelLetter(char) && !isVowelPhoneme(phoneme)) {
+                        silent.push(l);
+                        l++; // Salta la lettera, riprova lo stesso fonema con la prossima lettera
+                    }
+                    // Caso 2: Consonante muta (es. 'k' in know -> 'n')
+                    // Se la lettera è consonante e non matcha il fonema, e la prossima lettera matcha il fonema
+                    else if (!isVowelLetter(char) && l + 1 < letters.length) {
+                        // Lookahead semplice
+                        const nextChar = letters[l+1].toLowerCase();
+                        // Se la prossima lettera è vocale e fonema è vocale -> ok
+                        // Se la prossima lettera è consonante e matcha fonema -> ok
+                        let nextMatch = false;
+                        if (nextChar === phoneme) nextMatch = true;
+                        if (isVowelLetter(nextChar) && isVowelPhoneme(phoneme)) nextMatch = true;
+                        if (nextChar === 'n' && phoneme === 'n') nextMatch = true; // k-n
+                        
+                        if (nextMatch) {
+                            silent.push(l);
+                            l++;
+                        } else {
+                            // Se non riusciamo a decidere, assumiamo match sporco per non bloccare tutto
+                            l++; p++;
+                        }
+                    }
+                    else {
+                        // Fallback: avanza entrambi
+                        l++; p++;
+                    }
+                }
+            }
+            return silent;
+        }
+
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                try {
+                    const data = JSON.parse(event.target.result);
+                    log(`Caricate ${data.length} parole.`);
+                    
+                    let updatedCount = 0;
+                    data.forEach(entry => {
+                        // Ricalcola SEMPRE per essere sicuri, o solo se vuoto?
+                        // Meglio ricalcolare tutto per uniformità, eccetto se l'utente ha già messo mani (ma qui assumiamo automazione)
+                        const calculated = calculateSilentIndexes(entry.text, entry.fullPhonetic);
+                        
+                        // Logga le modifiche interessanti
+                        if (calculated.length > 0) {
+                            // log(`${entry.text}: [${calculated.join(', ')}]`);
+                            updatedCount++;
+                        }
+                        
+                        entry.silentIndexes = calculated;
+                    });
+
+                    log(`Aggiornate ${updatedCount} parole con lettere mute.`);
+
+                    // Download
+                    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'database_words_complete.json';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+
+                } catch (err) {
+                    log("Errore nel parsing del JSON: " + err.message);
+                }
+            };
+            reader.readAsText(file);
+        });
+    </script>
+</body>
+</html>

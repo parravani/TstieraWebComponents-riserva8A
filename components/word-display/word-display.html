@@ -1,0 +1,98 @@
+﻿<!-- File: components/word-display/word-display.html -->
+
+<template id="word-display-template">
+    <style>
+        /* :host si riferisce al tag <word-display> */
+        :host {
+            position: fixed;
+            z-index: 1000;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+            visibility: hidden;
+            /* Posizione di default, ma può essere sovrascritta da variabili CSS globali */
+            /*  top: var(--word-container-p-top, 30%);
+            left: var(--word-container-p-left, 50%);
+            transform: translate(-50%, -50%);*/
+        }
+
+        :host(.visible) {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .display-wrapper {
+            background: rgba(30, 30, 30, 0.75);
+            border: 2px solid #888;
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        #word-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .letterAndTranscript {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .word-char-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0 10px; /* Spaziatura aumentata */
+            cursor: pointer;
+            font-family: var(--font-main);
+            font-size: 70px;
+            font-weight: bold;
+            transition: transform 0.2s ease;
+            color: white;
+        }
+
+            .word-char-btn:hover {
+                transform: scale(1.15);
+            }
+
+        .trans-char-btn {
+            margin: auto; /* Spaziatura aumentata */
+            font-size: 45px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            color: white;
+            font-family: var(--font-phonetic);
+            font-weight: bold;
+        }
+
+            .trans-char-btn.muta {
+                background-image: url("img/midispiace.png");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                min-width: 46px;
+                min-height: 46px;
+                color: transparent; /* Nasconde il testo per far vedere l'immagine */
+            }
+
+        #transcription-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 45px;
+        }
+    </style>
+  
+    <div class="display-wrapper">
+        <div id="word-container"></div>
+    </div>
+</template>

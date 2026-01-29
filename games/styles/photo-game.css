@@ -1,0 +1,210 @@
+/* Stili base del componente */
+:host {
+    display: block;
+    font-family: sans-serif;
+}
+
+#photo-game-block {
+    /* Rimosso position: relative e bottom: 6vh per un layout più pulito */
+    border-radius: 10px;
+    padding: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+#game-area {
+    position: relative; /* Necessario per posizionare i cloni animati */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;  RIMOSSO PERCHÉ CAUSAVA IL BUG */
+    gap: 20px;
+}
+
+.flying-symbol {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none;
+    /* transizione per il movimento e animazione per la rotazione */
+    transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
+    animation: fly-rotate 0.5s linear;
+}
+
+@keyframes fly-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+#main-interactive-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Aggiunto per gestire meglio lo spazio */
+}
+
+#image-container {
+    flex-shrink: 0;
+    /* Dimensioni rese flessibili invece che fisse */
+    width: 150px;
+    max-width: 100%; 
+    height: auto; /* Altezza automatica per mantenere le proporzioni */
+    aspect-ratio: 1 / 1; /* Mantiene il contenitore quadrato */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+}
+
+#random-image {
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer;
+    object-fit: contain; /* Assicura che l'immagine si adatti bene */
+}
+
+#next-button {
+    background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: transform 0.2s;
+    flex-shrink: 0; /* Evita che il pulsante si rimpicciolisca */
+}
+
+#next-button:hover {
+    transform: scale(1.05);
+}
+
+.reconstruction-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    min-height: 40px;
+}
+
+#reconstruction-areas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.letter-box, .ipa-box {
+    width: 45px;
+    height: 45px;
+    border: 1px dashed lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    background-color: transparent;
+}
+
+.ipa-option-symbol {
+    width: 45px;
+    height: 45px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    background-color: transparent;
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+.ipa-option-symbol:hover {
+    transform: scale(1.1);
+}
+
+.ipa-option-symbol.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.5);
+}
+
+#error-counters {
+    display: flex;
+    justify-content: center; /* CORREZIONE: Centra i contatori come un gruppo */
+    gap: 25px; /* Aggiunge spazio tra i due contatori */
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* --- Media Query per Responsività --- */
+@media (max-width: 600px) {
+    #photo-game-block {
+        padding: 8px;
+    }
+
+    #main-interactive-area {
+        flex-direction: column; /* Impila gli elementi verticalmente */
+        gap: 15px;
+    }
+
+    #image-container {
+        width: 120px; /* Riduci leggermente la dimensione dell'immagine su mobile */
+    }
+
+    #next-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .letter-box, .ipa-box {
+        width: 30px;
+        height: 30px;
+        font-size: 1em;
+    }
+
+    .ipa-option-symbol {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2em;
+    }
+}
+
+@keyframes fly-and-rotate {
+    0% {
+        transform: scale(0.3) rotate(0deg);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+.symbol-landing {
+    display: inline-block; /* Assicura che la trasformazione venga applicata */
+    animation: fly-and-rotate 0.4s ease-out;
+}

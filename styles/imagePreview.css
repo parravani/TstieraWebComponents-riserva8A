@@ -1,0 +1,69 @@
+.img-preview {
+    position: fixed; /* 'fixed' � meglio di 'absolute' per questo */
+    width: 120px;
+    height: 120px;
+    background: #222;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 3000; /* Un valore alto per stare sopra a tutto */
+    /*transform: translateX(-50%);*/ /* Lo centra orizzontalmente */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    pointer-events: none;
+}
+
+    .img-preview.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .img-preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 5px;
+    }
+
+/* Stili per il tooltip testuale */
+.tooltip {
+    position: fixed;
+    /*background-color: rgba(0, 0, 0, 0.8);*/
+    color: white;
+    padding: 8px 12px;
+    z-index: 3001; /* Leggermente sopra l'anteprima immagine se si sovrappongono */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    pointer-events: none;
+    /* Per assicurare che la larghezza si adatti al contenuto */
+    width: auto;
+    height: auto;
+    line-height: 1.4;
+    text-align: center;
+    border-radius: 8px;
+    transform: translateY(-10px); /* Sposta il tooltip di 10px più in alto */
+}
+
+.tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ======================================================= */
+/* ===      STILI PER L'EFFETTO LAMPEGGIANTE           === */
+/* ======================================================= */
+@keyframes flash {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3; /* Leggermente visibile anche durante il "flash" */
+    }
+}
+
+.flashing-word {
+    animation: flash 1.5s infinite; /* Applica l'animazione in un loop infinito */
+}

@@ -1,0 +1,77 @@
+
+/* ======================================================= */
+/* ===      STILI PER L'ANIMAZIONE "FLY-TO-TARGET"       === */
+/* ======================================================= */
+#animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Non intercetta i click del mouse */
+    z-index: 9999;
+}
+
+.flying-element {
+    position: fixed;
+    z-index: 10000;
+    background: transparent;
+    border: 2px solid transparent;
+    color: #000; /* Assicura che il testo sia visibile */
+    border-radius: 8px;
+    transition: all 1.2s ease-in-out; /* Transizione pi� fluida (accelerazione e decelerazione dolci) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    box-shadow: none;
+    transform: scale(1); /* Parte a dimensione normale */
+}
+    /*devono essere uguali a word-display-animated.html*/
+    .flying-element.letter-style {
+        font-family: var(--font-main);
+        font-size: 70px;
+    }
+
+    .flying-element.phoneme-style {
+        font-family: var(--font-phonetic);
+        font-size: 60px;
+    }
+
+/* Animazione "pulse" per i tasti cliccati */
+@keyframes key-pulse-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.key-pulse {
+    animation: key-pulse-animation 0.3s ease-in-out;
+}
+
+.maestro-char {
+    position: absolute;
+    width: 150px; /* Dimensione del personaggio */
+    height: auto;
+    left: 5%; /* Posizione a sinistra */
+    z-index: 100;
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 0; /* Nascosti di default */
+}
+
+#typy-maestro {
+    top: 30%;
+}
+/* Abbassato Typy */
+#looky-maestro {
+    top: 65%;
+}
+/* Abbassato Looky */
