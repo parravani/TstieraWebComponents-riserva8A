@@ -9,6 +9,7 @@ class PhotoGameManager {
         this.isGameActive = false;
         this.soundDispatcher = window.soundDispatcher;
         this.currentImageData = null; // Aggiunto per memorizzare l'immagine corrente
+        this.largeDbMap = new Map(); // Mappa per il database completo
 
         // Nuove proprietà per il gioco di parole
         this.currentWord = null;
@@ -124,10 +125,22 @@ class PhotoGameManager {
     async loadGameData() {
         try {
             const dataPath = window.location.pathname.includes('/games/') ? '../data/' : 'data/';
-            const lettersData = await dataService.getData(`${dataPath}letters.json`);
-            const phonemesData = await dataService.getData(`${dataPath}phonemes-new.json`);
+            
+            // Caricamento parallelo dei dati
+            const [lettersData, phonemesData, largeDbData] = await Promise.all([
+                dataService.getData(`${dataPath}letters.json`),
+                dataService.getData(`${dataPath}phonemes-new.json`),
+                dataService.getData(`${dataPath}database_words_complete.json`)
+            ]);
             
             this.allPhonemes = phonemesData; // Memorizza i fonemi
+            
+            // Popola la mappa del database completo
+            if (Array.isArray(largeDbData)) {
+                largeDbData.forEach(item => {
+                    if (item.text) this.largeDbMap.set(item.text.toLowerCase(), item);
+                });
+            }
 
             this.extractData(lettersData);
             this.extractData(phonemesData);
@@ -167,13 +180,36 @@ class PhotoGameManager {
                             const dirPath = pathParts.join('/');
                             const finalSoundPath = `${dirPath}/${filename}`;
 
-
-                            this.imagesData.push({
+                            let wordData = {
                                 img: `${prefix}${key.img}`,
                                 wordSound: `${prefix}${finalSoundPath}`,
                                 text: key.word,
-                                fullPhonetic: key.wordPhonetic
-                            });
+                                fullPhonetic: key.wordPhonetic,
+                                wordCharPhonetics: key.wordCharPhonetics || null
+                            };
+
+                            // MERGE: Se la parola esiste nel database completo, usa i dati fonetici e silent letters da lì
+                            if (this.largeDbMap.has(key.word.toLowerCase())) {
+                                const largeEntry = this.largeDbMap.get(key.word.toLowerCase());
+                                
+                                // Sovrascrivi la fonetica completa (spesso più accurata nel DB grande)
+                                if (largeEntry.fullPhonetic) {
+                                    wordData.fullPhonetic = largeEntry.fullPhonetic.replace(/\/\//g, '');
+                                }
+
+                                // Gestione Silent Letters
+                                if (largeEntry.silentIndexes && Array.isArray(largeEntry.silentIndexes)) {
+                                    wordData.silentIndexes = largeEntry.silentIndexes;
+                                    // Genera wordCharPhonetics per le silent letters se non presente o incompleto
+                                    if (!wordData.wordCharPhonetics) {
+                                        wordData.wordCharPhonetics = key.word.split('').map((char, index) => {
+                                            return largeEntry.silentIndexes.includes(index) ? "" : char;
+                                        });
+                                    }
+                                }
+                            }
+
+                            this.imagesData.push(wordData);
                         }
                     });
                 }
@@ -209,7 +245,9 @@ class PhotoGameManager {
             // Costruisce l'oggetto wordData come richiesto dal componente
             const wordData = {
                 text: this.currentImageData.text,
-                fullPhonetic: this.currentImageData.fullPhonetic
+                fullPhonetic: this.currentImageData.fullPhonetic,
+                wordCharPhonetics: this.currentImageData.wordCharPhonetics,
+                silentIndexes: this.currentImageData.silentIndexes
             };
 
             // Chiama il metodo startGame del componente per impostare il turno
@@ -219,6 +257,38 @@ class PhotoGameManager {
         } else if (!this.currentImageData) {
             console.warn('Nessun dato immagine disponibile da visualizzare.');
         }
+    }
+
+    /**
+     * Recupera i dati di una parola dal database completo o dai dati caricati.
+     * Utile per la modalità pratica quando la parola non è nelle immagini predefinite.
+     * @param {string} text - La parola da cercare.
+     * @returns {object|null} I dati della parola o null.
+     */
+    getWordData(text) {
+        if (!text) return null;
+        const lowerText = text.toLowerCase();
+        
+        // 1. Cerca in imagesData (priorità ai dati curati manualmente con immagini)
+        const existing = this.imagesData.find(d => d.text.toLowerCase() === lowerText);
+        if (existing) return existing;
+
+        // 2. Cerca nel database completo
+        if (this.largeDbMap.has(lowerText)) {
+            const entry = this.largeDbMap.get(lowerText);
+            return {
+                text: entry.text,
+                fullPhonetic: entry.fullPhonetic ? entry.fullPhonetic.replace(/\/\//g, '') : '',
+                silentIndexes: entry.silentIndexes || [],
+                // Genera wordCharPhonetics per le silent letters (necessario per il componente)
+                wordCharPhonetics: entry.text.split('').map((char, index) => {
+                    return (entry.silentIndexes && entry.silentIndexes.includes(index)) ? "" : char;
+                }),
+                img: null, 
+                wordSound: null 
+            };
+        }
+        return null;
     }
 
     /**
